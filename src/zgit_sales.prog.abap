@@ -8,10 +8,11 @@ REPORT ZGIT_SALES.
 *&---------------------------------------------------------------------*
 
 TYPE-POOLS: slis.
-
+"changes made for git repo v2.0
 " for demo"
 *BREAK-POINT.
 CONSTANTS: c_first_tab TYPE slis_tabname VALUE 'ITAB1',
+c_first_tab_new1 TYPE slis_tabname VALUE 'ITAB1',
            c_second_tab TYPE slis_tabname VALUE 'ITAB2',
            c_colpos_order TYPE slis_fieldcat_alv-col_pos VALUE '1',
            c_field_order TYPE slis_fieldcat_alv-fieldname VALUE 'VBELN',
@@ -41,7 +42,8 @@ CONSTANTS: c_first_tab TYPE slis_tabname VALUE 'ITAB1',
           c_colpos_qty  TYPE    slis_fieldcat_alv-col_pos       VALUE '5',
           c_field_qty TYPE    slis_fieldcat_alv-fieldname     VALUE 'KWMENG',
           c_colpos_unit TYPE    slis_fieldcat_alv-col_pos       VALUE 6,
-          c_field_unit  TYPE    slis_fieldcat_alv-fieldname     VALUE 'MEINS'.
+          c_field_unit  TYPE    slis_fieldcat_alv-fieldname     VALUE 'MEINS',
+          c_field_unit_new  TYPE    slis_fieldcat_alv-fieldname     VALUE 'MEINS'.
 
 
 * Data declarations.
@@ -85,7 +87,7 @@ START-OF-SELECTION.
 * Get the data for the first block
   SELECT vbeln bstnk erdat kunnr UP TO 10 ROWS
          INTO TABLE t_vbak
-         FROM vbak. " WHERE vbeln > c_order_low.     "'0060000100'.
+         FROM vbak WHERE vbeln > c_order_low.     "'0060000100'.
   IF sy-subrc = 0.
     SORT t_vbak BY vbeln.
   ENDIF.
