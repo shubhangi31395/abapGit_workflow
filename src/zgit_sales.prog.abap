@@ -12,6 +12,7 @@ TYPE-POOLS: slis.
 " for demo"
 *BREAK-POINT.
 CONSTANTS: c_first_tab TYPE slis_tabname VALUE 'ITAB1',
+c_first_tab_new2 TYPE slis_tabname VALUE 'ITAB1',
 c_first_tab_new1 TYPE slis_tabname VALUE 'ITAB1',
            c_second_tab TYPE slis_tabname VALUE 'ITAB2',
            c_colpos_order TYPE slis_fieldcat_alv-col_pos VALUE '1',
